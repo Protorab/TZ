@@ -17,21 +17,88 @@
     <meta property="og:image" content="http(s)://url.site/img/og.jpg">
     <meta property="og:image:width" content="968">
     <meta property="og:image:height" content="504">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=c0f6f5c0-aaee-4a96-ad79-ebd980c3424d&lang=ru_RU"
+      type="text/javascript">
+    </script>
+    <script src="https://kit.fontawesome.com/e272fd0660.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
-
   </head>
 
   <body>
-      <header class="header">
-        <div class="wrapper header_top">
-          <a href="" class="logo header__logo">
-            <img src="" alt="">
-          </a>
-          <p class="p header__decriotion">Студия депиляции <br>и массажный кабинет в Бресте</p>
+    <header class="header">
+      <div class="wrapper">
+        <a href="" class="logo header__logo">
+          <img src="" alt="">
+        </a>
+        <p class="p header__decriotion">Студия депиляции <br>и массажный кабинет в Бресте</p>
+        <div class="header__map_wrap">
+          <!-- <img src="img/map.png" alt="" class="map__img"> -->
+          <div id="map" class="header__map"></div>
+          <p class="p map_description">
+            <span>Мы находимся в центре:</span> <br>
+            г. Брест, ул. Гоголя, д.65</p>
+          <a href="#" class="map__link">Смотреть на карте</a>
+          <div id="map_2" class="header__map_full"></div>
         </div>
-      </header>
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+      </div>
+    </header>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <script type="text/javascript">
+      // Функция ymaps.ready() будет вызвана, когда
+      // загрузятся все компоненты API, а также когда будет готово DOM-дерево.
+      ymaps.ready(init);
+
+      function init() {
+        // Создание карты.    
+        var myMap = new ymaps.Map("map", {
+            // Координаты центра карты.
+            // Порядок по умолчанию: «широта, долгота».
+            // Чтобы не определять координаты центра карты вручную,
+            // воспользуйтесь инструментом Определение координат.
+            center: [52.093333, 23.698168],
+            // Уровень масштабирования. Допустимые значения:
+            // от 0 (весь мир) до 19.
+            zoom: 17,
+            controls: []
+          }),
+          myMap2 = new ymaps.Map("map_2", {
+            // Координаты центра карты.
+            // Порядок по умолчанию: «широта, долгота».
+            // Чтобы не определять координаты центра карты вручную,
+            // воспользуйтесь инструментом Определение координат.
+            center: [52.093333, 23.698168],
+            // Уровень масштабирования. Допустимые значения:
+            // от 0 (весь мир) до 19.
+            zoom: 17,
+            controls: []
+          });
+
+        var myPlacemark = new ymaps.Placemark([52.093333, 23.698168], {}, {
+            iconLayout: 'default#image',
+            // iconImageClipRect: [[0, 0], [26, 46]],
+            iconImageHref: 'img/map_icon.png',
+            iconImageSize: [23, 27],
+            iconImageOffset: [-10, -27]
+          }),
+          myPlacemark2 = new ymaps.Placemark([52.093333, 23.698168], {}, {
+            iconLayout: 'default#image',
+            // iconImageClipRect: [[0, 0], [26, 46]],
+            iconImageHref: 'img/map_icon.png',
+            iconImageSize: [23, 27],
+            iconImageOffset: [-10, -27]
+          });
+        myMap.geoObjects.add(myPlacemark);
+        myMap2.geoObjects.add(myPlacemark2);
+        myMap.behaviors.disable('scrollZoom');
+        // Размещение геообъекта на карте.
+        // myMap.geoObjects.add(myPlacemark1);
+
+      }
+    </script>
     <script src="js/main.js"></script>
   </body>
 
