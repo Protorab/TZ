@@ -11,7 +11,7 @@
     padding: 0;
   }
 }
- 
+
 *:focus {
   outline: 0;
 }
@@ -829,6 +829,25 @@ a {
   }
 }
 
+@mixin _trans($def_t) {
+  transition: ease-in-out $def_t;
+  -webkit-transition: ease-in-out $def_t;
+  -moz-transition: ease-in-out $def_t;
+  -ms-transition: ease-in-out $def_t;
+  -o-transition: ease-in-out $def_t;
+}
+
+@mixin _borderrad($def_rad) {
+  border-radius: $def_rad;
+  -webkit-border-radius: $def_rad;
+  -moz-border-radius: $def_rad;
+  -ms-border-radius: $def_rad;
+  -o-border-radius: $def_rad;
+}
+@mixin _width($defw) {
+  width: ($defw/1920)*100vw;
+}
+
 html {
 
   font-size: 10px;
@@ -845,10 +864,10 @@ html {
 @-ms-viewport {
   width: device-width;
 }
-
+@import "../fonts/fonts.scss";
 body {
   margin: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Rooney Sans',sans-serif;
   font-size: 1rem;
   font-weight: 500;
   color: #000;
@@ -933,7 +952,8 @@ body {
     font-weight: normal;
   }
 }
-.section{
+
+.section {
   width: 100%;
   overflow: hidden;
   display: flex;
@@ -943,13 +963,13 @@ body {
 
 h,
 .h {
-  font-family: 'Roboto Slab';
+
   font-weight: 800;
   position: relative;
   z-index: 1;
 
   &1 {
-    font-family: 'Roboto Slab';
+
     font-size: 5.8rem;
     line-height: 134%;
     font-weight: 800;
@@ -958,7 +978,7 @@ h,
   }
 
   &2 {
-    font-family: 'Roboto Slab';
+
     font-size: 5rem;
     line-height: 134%;
     font-weight: 800;
@@ -967,7 +987,7 @@ h,
   }
 
   &3 {
-    font-family: 'Roboto Slab';
+
     font-size: 4.2rem;
     line-height: 130%;
     font-weight: 800;
@@ -977,7 +997,7 @@ h,
   }
 
   &4 {
-    font-family: 'Roboto Slab';
+
     font-size: 2.5rem;
     line-height: 120%;
     font-weight: 800;
@@ -1080,7 +1100,9 @@ pre {
   }
 
 }
-
+.wrapper{
+  display: flex;
+}
 @media only screen and (max-width : 1920px) {}
 
 @media only screen and (max-width : 1680px) {}
