@@ -168,7 +168,11 @@
       </div>
     </section>
     <section id="about" class="section about__section">
+      <div class="about__img_wrap">
+          <img src="img/abot_img.jpg" alt="" class="about__img mob"><img src="img/abaot_logo.png" alt="" class="about__img_logo mob">
+        </div>
       <div class="wrapper about__wrapper">
+        
         <div class="about__coll">
           <img src="img/abot_img.jpg" alt="" class="about__img"><img src="img/abaot_logo.png" alt=""
             class="about__img_logo">
@@ -285,8 +289,8 @@
               if (_width > 1024) {
                 _zoom = 16.1;
               }
-              if (_width < 1024) {
-                _zoom = 8;
+              if (_width < 1025) {
+                _zoom = 15.9;
               }
               var myMap = new ymaps.Map("map", {
                 center: [53.913168, 27.500162],
