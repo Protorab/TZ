@@ -1120,57 +1120,7 @@ pre {
   }
 
 }
-
-.wrapper {
-  width: 100%;
-  margin: 0 (52/1440)*100%;
-  display: flex;
-}
-
-.top__baner {
-  background: #de598e;
-  height: 56px;
-  color: #fff;
-  text-transform: uppercase;
-}
-
-.top__baner_wrap {
-  position: relative;
-  align-items: center;
-
-  justify-content: center;
-}
-
-.top__baner_btn {
-  padding: 5px 20px;
-  text-align: center;
-
-  background: #fff;
-  @include _borderrad(4px);
-  margin-left: 30px;
-  margin-right: 70px;
-  color: #2a6380;
-}
-
-.baner__close {
-  cursor: pointer;
-  position: absolute;
-  width: 1rem;
-  height: 1rem;
-  right: 0;
-
-  &::before,
-  &::after {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 3px;
-    @include _borderrad(5px);
-    background: #fff;
-
-  }
-}
-
+ 
 @media only screen and (max-width : 1920px) {}
 
 @media only screen and (max-width : 1680px) {}
